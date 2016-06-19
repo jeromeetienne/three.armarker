@@ -11,6 +11,7 @@
   - have the function for demo.html ready - all the scene build
   - once basic.html is ready, split the 2 files
   - thus you keep a non-duplicated file when you are developping
+- armarkermulti and armarkerprediction arent ready to merge
 - DONE clean up artoolkit.context contructor parameters
   - close to the source init
   - crappy verbose parameters, hardcoded url
