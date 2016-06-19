@@ -44,12 +44,12 @@ arScenes['generic'] = {
 	setupDetection : function(){
 		// load kanji pattern
 		// TODO pass that into promise
-		// arContext.controller.loadMarker('../../data/patt.kanji', function(markerId) {
+		// arContext.controller.loadMarker('../data/patt.kanji', function(markerId) {
 		// 	var markerWidth = 1
 		// 	var markerTracker = arContext.controller.trackPatternMarkerId(markerId, markerWidth);
 		// 
 		// 	// load hiro pattern
-		// 	arContext.controller.loadMarker('../../data/patt.hiro', function(markerId) {
+		// 	arContext.controller.loadMarker('../data/patt.hiro', function(markerId) {
 		// 		var markerWidth = 1
 		// 		var markerId = arContext.controller.trackPatternMarkerId(markerId, markerWidth);
 		// 		console.log('hiro markerId', markerId)

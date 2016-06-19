@@ -60,7 +60,7 @@ arScenes['roomspaceVideo'] = {
 		multiMarker.originObject.position.y = 3 
 		var geometry	= new THREE.PlaneGeometry(40,40);
 		var material	= new THREE.MeshBasicMaterial({
-			map :  new THREE.TextureLoader().load( '../../textures/UV_Grid_Sm.jpg', function onLoaded(texture){
+			map :  new THREE.TextureLoader().load( '../textures/UV_Grid_Sm.jpg', function onLoaded(texture){
 				texture.wrapS = THREE.RepeatWrapping;
 				texture.wrapT = THREE.RepeatWrapping;
 				texture.repeat.set(4, 4);

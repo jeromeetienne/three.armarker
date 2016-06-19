@@ -13,7 +13,7 @@ arScenes['headtrackingVideo'] = {
 		return srcElement		
 	},
 	setupDetection : function(arContext){
-		arContext.controller.loadMarker('../../data/patt.kanji', function(markerId) {
+		arContext.controller.loadMarker('../data/patt.kanji', function(markerId) {
 			var markerWidth = 1
 			var markerTracker = arContext.controller.trackPatternMarkerId(markerId, markerWidth);
 		})
