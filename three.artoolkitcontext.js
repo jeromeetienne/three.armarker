@@ -13,7 +13,7 @@ THREE.ArtoolkitContext = function(options, onReady){
 	this.detectionDate = null
 
 	// load camera parameters
-	var cameraParamsUrl = options.cameraParamsUrl !== undefined ? options.cameraParamsUrl : '../../data/camera_para.dat'
+	var cameraParamsUrl = options.cameraParamsUrl !== undefined ? options.cameraParamsUrl : '../data/camera_para.dat'
 	var cameraParameters = new ARCameraParam(cameraParamsUrl, function() {
 		
 		_this.controller = new ARController(options.width, options.height, cameraParameters);

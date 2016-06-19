@@ -6,7 +6,7 @@ var arScenes = arScenes || {}
 
 arScenes['headtrackingVideo'] = {
 	setupArContext : function(arContextOpts, onArContextReady){
-		var url = '../../videos/headtracking.mp4'
+		var url = '../videos/headtracking.mp4'
 		var srcElement = THREE.ArUtils.setupArContextWithVideo(url, arContextOpts, function(arContext){
 			onArContextReady(arContext)
 		})

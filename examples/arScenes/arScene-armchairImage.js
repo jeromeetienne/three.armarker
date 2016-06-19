@@ -9,7 +9,7 @@ arScenes['armchairImage'] = {
 	 * setup arContext and srcElement
 	 */
 	setupArContext : function(arContextOpts, onArContextReady){
-		var url = '../../images/armchair.jpg'
+		var url = '../images/armchair.jpg'
 		var srcElement = THREE.ArUtils.setupArContextWithImage(url, arContextOpts, function(arContext){
 			onArContextReady(arContext)
 		})

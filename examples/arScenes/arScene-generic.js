@@ -16,20 +16,20 @@ arScenes['generic'] = {
 				onArContextReady(arContext)
 			})
 		}else if( type === 'image' ){
-			// var url = '../../images/armchair.jpg'
-			// var url = '../../images/chalk.jpg'
-			// var url = '../../images/chalk_multi.jpg'
-			// var url = '../../images/kuva.jpg'
-			var url = '../../images/img.jpg'
-			var url = '../../images/marker_cube_hamming63.png'
+			// var url = '../images/armchair.jpg'
+			// var url = '../images/chalk.jpg'
+			// var url = '../images/chalk_multi.jpg'
+			// var url = '../images/kuva.jpg'
+			var url = '../images/img.jpg'
+			var url = '../images/marker_cube_hamming63.png'
 			var srcElement = THREE.ArUtils.setupArContextWithImage(url, arContextOpts, function(arContext){
 				onArContextReady(arContext)
 			})
 		}else if( type === 'video' ){
-			// var url = '../../videos/output_4.mp4';
-			var url = '../../videos/VID_20160503_165602-640x480.mp4'
-			// var url = '../../videos/headtracking.mp4'
-			// var url = '../../videos/me-marker-cube.mp4'
+			// var url = '../videos/output_4.mp4';
+			var url = '../videos/VID_20160503_165602-640x480.mp4'
+			// var url = '../videos/headtracking.mp4'
+			// var url = '../videos/me-marker-cube.mp4'
 			var srcElement = THREE.ArUtils.setupArContextWithVideo(url, arContextOpts, function(arContext){
 				onArContextReady(arContext)
 			})
