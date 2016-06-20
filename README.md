@@ -8,11 +8,14 @@ The examples shows various cases of augmented reality
 
 Show Don't Tell
 ===============
-* [basic.html](https://jeromeetienne.github.io/three.armarker/index.html#video)
-\[[view source](https://github.com/jeromeetienne/three.armarker/blob/master/index.html)\] :
+* [demo.html](https://jeromeetienne.github.io/three.armarker/examples/demo.html#video)
+\[[view source](https://github.com/jeromeetienne/three.armarker/blob/master/examples/demo.html)\] :
 It shows a basic usage of jsartoolkit API, with a simple object on a marker
 
 *Not Yet Implemented*
+* [basic.html](https://jeromeetienne.github.io/three.armarker/index.html#video)
+\[[view source](https://github.com/jeromeetienne/three.armarker/blob/master/index.html)\] :
+It shows a basic usage of jsartoolkit API, with a simple object on a marker
 * [multimaker-roomspace.html](https://jeromeetienne.github.io/three.armarker/index.html#video)
 \[[view source](https://github.com/jeromeetienne/three.armarker/blob/master/index.html)\] :
 It shows how to handle a ["room space"]() configuration with multiple makers
