@@ -1,5 +1,5 @@
 # TODO before release
-- put that in its own repo, THREE.ArMarker
+- DONE put that in its own repo, THREE.ArMarker
 - fix the smoothing in ArMarkerMulti
   - markerObject is the average of other originObject
   - if smoothing is disabled, originObject is untouched
@@ -7,6 +7,10 @@
 - intrument the demo
   - enable/disable text output of the found markerInfo
 - fix the aspect issue, this is WAY long due
+  - i got part of that in the webvr seethru
+  - i need to display the video fullpage + respected aspect
+  - i need to display the 3d on top, in sync
+  - partial goal: to have video fullpage with 3d on top at 640x480  
 - write a good basic.html
   - have the function for demo.html ready - all the scene build
   - once basic.html is ready, split the 2 files
