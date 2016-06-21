@@ -173,7 +173,7 @@ if( urlParameters.debugCameraEnabled ){
 	scene.add(cameraHelper)
 
 	// Create a three.js camera.
-	var cameraDebug = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000);
+	var cameraDebug = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 10000);
 	scene.add(cameraDebug);
 	cameraDebug.position.x = -2
 	cameraDebug.position.z = -10
@@ -305,8 +305,8 @@ var geometry = new THREE.PlaneGeometry(2, 2);
 var material = new THREE.MeshBasicMaterial({
 	// map : new THREE.TextureLoader().load('images/UV_Grid_Sm.jpg'),
 	side: THREE.DoubleSide,
-	opacity: 0.5,
-	transparent: true,
+	// opacity: 0.5,
+	// transparent: true,
 });
 var seethruPlane = new THREE.Mesh(geometry, material);
 seethruPlane.position.x = 0
@@ -332,11 +332,12 @@ material.map.maxFilter = THREE.NearestFilter;
 material.map.format = THREE.RGBFormat;
 material.map.generateMipmaps = false;
 
+	
 onRenderFcts.push(function(delta){
 	// camera.updateMatrixWorld(true)
 	
 	// get seethruPlane position
-	var position = new THREE.Vector3(0,0,10)
+	var position = new THREE.Vector3(0,0,20)
 	seethruPlane.position.copy(position)
 	camera.localToWorld(seethruPlane.position)
 
@@ -344,16 +345,20 @@ onRenderFcts.push(function(delta){
 	camera.matrixWorld.decompose( camera.position, camera.quaternion, camera.scale );	
 	seethruPlane.quaternion.copy( camera.quaternion )
 
-camera.fov = 45
-camera.aspect = 640/480
+	// because jsArtoolkit projection matrix doesn't set those
+	// FIXME discover those value
+	// - see http://www.gamedev.net/topic/609769-derive-fov-from-projection-matrix-how/
+	camera.fov = 43
+	camera.aspect = 640/480
+	camera.aspect = 294 / 226
 	
 	// get seethruPlane height relative to fov
 	seethruPlane.scale.y = Math.tan(Math.PI/180 * camera.fov/2)*position.length()
-// return
 
 	// get seethruPlane aspect
 	seethruPlane.scale.x = seethruPlane.scale.y * camera.aspect
-	
+
+	// because jsArtoolkit projection matrix is upside down
 	seethruPlane.scale.y *= -1
 })
 
@@ -366,18 +371,20 @@ video.addEventListener('canplaythrough', function(){
 })
 
 function updateSeeThruAspectUv(plane){
-	if( video.videoWidth === 0 )	return
-	if( video.videoHeight === 0 )	return
+	// if( video.videoWidth === 0 )	return
+	// if( video.videoHeight === 0 )	return
 
 	var faceVertexUvs = plane.geometry.faceVertexUvs[0]
-	var screenAspect = window.innerWidth / window.innerHeight
+	// var screenAspect = window.innerWidth / window.innerHeight
+	// var videoAspect = video.videoWidth / video.videoHeight
 	var screenAspect = 640 / 480
-	var videoAspect = video.videoWidth / video.videoHeight
-	
+	var videoAspect = video.width / video.height
+
 	plane.geometry.uvsNeedUpdate = true
 
 	if( screenAspect >= videoAspect ){
 		var actualHeight = videoAspect / screenAspect;
+
 		// faceVertexUvs y 0
 		faceVertexUvs[0][1].y = 0.5 - actualHeight/2
 		faceVertexUvs[1][0].y = 0.5 - actualHeight/2
